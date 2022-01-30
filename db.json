@@ -1,0 +1,28 @@
+{
+  "clientes": [
+    {
+      "nombre": "Eduardo",
+      "empresa": "Nvidia",
+      "email": "eduardoviana83@gmail.com",
+      "telefono": "12312123",
+      "notas": "sadasd",
+      "id": 1
+    },
+    {
+      "nombre": "Eduardo",
+      "empresa": "sadqweqwe",
+      "email": "daniel@hotmail.com",
+      "telefono": "1231231231",
+      "notas": "ggg",
+      "id": 3
+    },
+    {
+      "nombre": "miguel",
+      "empresa": "piletas",
+      "email": "maxif_210@gmail.com",
+      "telefono": "12312123",
+      "notas": "",
+      "id": 4
+    }
+  ]
+}
