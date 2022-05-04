@@ -10,9 +10,12 @@ const Formulario = ({ cliente, cargando }) => {
 
   const nuevoClienteSchema = Yup.object().shape({
     nombre: Yup.string()
-      .min(3, "El nombre es muy corto")
-      .max(20, "El nombre es muy largo")
-      .required("EL nombre del cliente es obligatorio"),
+      .min(3, "El nombre del cliente debe contener más de tres caracteres")
+      .max(
+        20,
+        "El nombre del cliente no debe contener más de veinte caracteres"
+      )
+      .required("El nombre del cliente es obligatorio"),
 
     empresa: Yup.string().required("EL nombre de la empresa es obligatorio"),
     email: Yup.string()
@@ -59,8 +62,8 @@ const Formulario = ({ cliente, cargando }) => {
   return cargando ? (
     <Spinner />
   ) : (
-    <div className="bg-white mt-10 px-5 py-10 rounded-md shadow-md md:w-3/4 mx-auto">
-      <h1 className="text-gray-600 font-bold text-xl uppercase text-center">
+    <div className="bg-white mt-10 px-10 py-10 rounded-md shadow-md md:w-3/4 mx-auto">
+      <h1 className="text-gray-600 font-bold text-xl uppercase text-center mb-5">
         {cliente.nombre ? "Editar cliente" : "Agregar cliente"}
       </h1>
 
@@ -89,7 +92,7 @@ const Formulario = ({ cliente, cargando }) => {
                 <Field
                   id="nombre"
                   type="text"
-                  className="mt-2 block w-full p-3 bg-gray-50"
+                  className="mt-2 block w-full p-3 bg-gray-50 outline-offset-2 outline-blue-500"
                   placeholder="Nombre del Cliente"
                   name="nombre"
                 />
@@ -106,7 +109,7 @@ const Formulario = ({ cliente, cargando }) => {
                 <Field
                   id="empresa"
                   type="text"
-                  className="mt-2 block w-full p-3 bg-gray-50"
+                  className="mt-2 block w-full p-3 bg-gray-50 outline-offset-2 outline-blue-500"
                   placeholder="Empresa del Cliente"
                   name="empresa"
                 />
@@ -123,7 +126,7 @@ const Formulario = ({ cliente, cargando }) => {
                 <Field
                   id="email"
                   type="email"
-                  className="mt-2 block w-full p-3 bg-gray-50"
+                  className="mt-2 block w-full p-3 bg-gray-50 outline-offset-2 outline-blue-500"
                   placeholder="Email del Cliente"
                   name="email"
                 />
@@ -140,7 +143,7 @@ const Formulario = ({ cliente, cargando }) => {
                 <Field
                   id="telefono"
                   type="tel"
-                  className="mt-2 block w-full p-3 bg-gray-50"
+                  className="mt-2 block w-full p-3 bg-gray-50 outline-offset-2 outline-blue-500"
                   placeholder="Teléfono del Cliente"
                   name="telefono"
                 />
@@ -157,17 +160,19 @@ const Formulario = ({ cliente, cargando }) => {
                   as="textarea"
                   id="notas"
                   type="text"
-                  className="mt-2 block w-full p-3 bg-gray-50 h-40"
+                  className="mt-2 block w-full p-3 bg-gray-50 h-40 outline-offset-2 outline-blue-500"
                   placeholder="Notas del Cliente"
                   name="notas"
                 />
               </div>
 
-              <input
-                type="submit"
-                value={cliente.nombre ? "Editar cliente" : "Agregar cliente"}
-                className="mt-5 w-full bg-blue-800 p-3 text-white uppercase font-bold text-lg"
-              />
+              <div className="flex justify-end">
+                <input
+                  type="submit"
+                  value={cliente.nombre ? "Editar cliente" : "Agregar cliente"}
+                  className="w-80 mt-5 bg-blue-800 p-4 text-white uppercase font-bold text-lg hover:bg-blue-900 hover:cursor-pointer"
+                />
+              </div>
             </Form>
           );
         }}

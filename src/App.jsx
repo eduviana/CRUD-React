@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import EditarCliente from "./paginas/EditarCliente";
@@ -6,8 +5,8 @@ import Inicio from "./paginas/Inicio";
 import NuevoCLiente from "./paginas/NuevoCLiente";
 import VerCliente from "./components/VerCliente";
 
-
 function App() {
+  console.log(import.meta.env.VITE_API_URL);
   return (
     //El BrowserRouter tiene que contener todas las rutas
     //EL Routes tambien tiene que contener todas las rutas

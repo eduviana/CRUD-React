@@ -1,29 +1,27 @@
 import { useNavigate } from "react-router-dom";
 
 const Cliente = ({ cliente, handleDelete }) => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const { nombre, empresa, email, telefono, notas, id } = cliente;
 
   return (
-    <tr className="border-b hover:bg-gray-50">
-      <td className="p-3"> {nombre} </td>
-      <td className="p-3">
-        <p>
-          <span className="text-gray-800 uppercase font-bold">Email: </span>{" "}
-          {email}
-        </p>
-        <p>
-          <span className="text-gray-800 uppercase font-bold">Tel: </span>{" "}
-          {telefono}
-        </p>
+    <tr className="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
+      <th
+        scope="row"
+        className="px-2 py-4 dark:text-white whitespace-nowrap"
+      >
+        {nombre}
+      </th>
+      <td className="px-2 py-4">
+        <span>{email}</span> br
+        <span>{telefono}</span>
       </td>
-      <td className="p-3"> {empresa} </td>
-      <td className="p-3">
+      <td className="px-2 py-4">{empresa}</td>
+      <td className="px-2 py-4">
         <button
           type="button"
-          className="bg-yellow-500 hover:bg-yellow-600 block w-full text-white p-2 uppercase font-bold text-xs"
+          className="mr-5 text-green-600 font-bold hover:text-green-800 hover:scale-110"
           onClick={() => navigate(`/clientes/${id}`)}
         >
           Ver
@@ -31,7 +29,7 @@ const Cliente = ({ cliente, handleDelete }) => {
 
         <button
           type="button"
-          className="bg-blue-600 hover:bg-blue-700 block w-full text-white p-2 uppercase font-bold text-xs mt-3"
+          className="mr-5 text-yellow-500 font-bold hover:text-yellow-700 hover:scale-110"
           onClick={() => navigate(`/clientes/editar/${id}`)}
         >
           Editar
@@ -39,8 +37,8 @@ const Cliente = ({ cliente, handleDelete }) => {
 
         <button
           type="button"
-          className="bg-red-600 hover:bg-red-700 block w-full text-white p-2 uppercase font-bold text-xs mt-3"
-          onClick={ () => handleDelete(id) }
+          className="mr-5 text-red-600 font-bold hover:text-red-800 hover:scale-110"
+          onClick={() => handleDelete(id)}
         >
           Eliminar
         </button>

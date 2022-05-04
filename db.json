@@ -2,10 +2,10 @@
   "clientes": [
     {
       "nombre": "Eduardo",
-      "empresa": "Nvidia",
+      "empresa": "Ford",
       "email": "eduardoviana83@gmail.com",
       "telefono": "12312123",
-      "notas": "sadasd",
+      "notas": "prueba",
       "id": 1
     },
     {
@@ -15,14 +15,6 @@
       "telefono": "1231231231",
       "notas": "ggg",
       "id": 3
-    },
-    {
-      "nombre": "miguel",
-      "empresa": "piletas",
-      "email": "maxif_210@gmail.com",
-      "telefono": "12312123",
-      "notas": "",
-      "id": 4
     }
   ]
 }
